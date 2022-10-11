@@ -7,7 +7,103 @@
     <title>Pesan Pizza</title>
 </head>
 <body>
-    <h1>Black Googse Bistro | Pizza-on-Demand</h1>
-    <p>Ou</p>
+    <h2>Black Googse Bistro | Pizza-on-Demand</h2>
+    <small>Out 12"wood-fired pizzas are avaible for delivery. Build your custom pizza and we'll deliver it within an hour.</small>
+    <hr>
+    <form method="post" action="thankyou.html">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3"><h3>Your Information</h3></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><label for="customername">Name</label></td>
+                    <td>:</td>
+                    <td><input type="text" name="customername" id="customername"></td>
+                </tr>
+                <tr>
+                    <td><label for="address">Address</label></td>
+                    <td>:</td>
+                    <td><input type="text" name="address" id="address"></td>
+                </tr>
+                <tr>
+                    <td><label for="telephone">Telepon</label></td>
+                    <td>:</td>
+                    <td><input type="number" name="telephone" id="telephone"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email</label></td>
+                    <td>:</td>
+                    <td><input type="email" name="email" id="email"></td>
+                </tr>
+                <tr>
+                    <td><label for="instructions">Delivery Instruction</label></td>
+                    <td>:</td>
+                    <td><textarea name="instructions" id="instructions" cols="20"></textarea></td>
+                </tr>
+            </tbody>
+        </table>
+        <fieldset>
+            <legend><b>Design Your Dream Pizza</b></legend>
+            <h4>Crush (Choose one)</h4>
+            <table>
+                <tr>
+                    <td><input type="radio" name="crust" id="classic-white" ></td>
+                    <td><label for="classic-white">Classic white</label></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="crust" id="multigrain"></td>
+                    <td><label for="multigrain">Multigrain</label></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="crust" id=""></td>
+                    <td>Cheese-stuffed crust</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="crust" id="gluten-free"></td>
+                    <td><label for="gluten-free">Gluten-free</label></td>
+                </tr>
+            </table>
+            <h4>Toppings (Choose as many as you want)</h4>
+            <table>
+                <tr>
+                    <td><input type="checkbox" name="toppings" id="red-sauce" checked></td>
+                    <td><label for="red-sauce">Red Sauce</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="toppings" id="white-sauce"></td>
+                    <td><label for="white-sauce">White Sauce</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="toppings" id="mozzarella-cheese"></td>
+                    <td><label for="mozzarella-cheese">Mozzarella Cheese</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="toppings" id="pepperoni"></td>
+                    <td><label for="pepperoni">pepperoni</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="toppings" id="mushrooms"></td>
+                    <td><label for="mushrooms">Mushrooms</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="toppings" id="peppers"></td>
+                    <td><label for="peppers">Peppers</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="toppings" id="anchoview"></td>
+                    <td><label for="anchoview">Anchoview</label></td>
+                </tr>
+            </table>
+            <h4 for="numbers">Number</h4>
+            <label for="numberOfPizzas">How many pizzas: </label>
+            <input type="number" id="numberOfPizzas" min="1" max="6" value="1">
+            <br><br>
+            <input type="submit" value="Bring me a pizza!">
+            <input type="reset">
+        </fieldset>
+    </form>
 </body>
 </html>
