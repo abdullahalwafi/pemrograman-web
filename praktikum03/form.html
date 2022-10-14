@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Form Pemesanan Barang</title>
+</head>
+<body>
+    <header style="margin: 20px 200px;">
+        <nav>
+            <table width="100%"  border="1" cellpadding="5">
+                <tr>
+                    <th>Home</th>
+                    <th>Generator Link</th>
+                    <th>Transaction History</th>
+                    <th>Policy</th>
+                    <th>Logout</th>
+                </tr>
+            </table>
+        </nav>
+    </header>
+    <main style="margin: 20px 200px;">
+        <form action="" enctype="multipart/form-data" action="hasil.html">
+            <div style="float: left;">
+                <img src="1.jpg" alt="" style="width: 200px;border: 1px solid black;"><br>
+                <input type="file" name="" id="pictures" accept="image/*">
+            </div>
+            <div style="display: inline;">
+                <table cellpadding="6">
+                    <tr>
+                        <td>Title Here</td>
+                        <td>:</td>
+                        <td><input type="text" value="MacBook Air €800" style="width: 380px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        <td>:</td>
+                        <td>
+                        <textarea name="" id="" cols="50" rows="6">Year : 2009
+                            
+Model: 
+
+Condition: Mint
+                        </textarea></td>
+                    </tr>
+                    <tr>
+                        <td>Account Number</td>
+                        <td>:</td>
+                        <td><input type="text" value="123-456-789-0" style="width: 380px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Bank</td>
+                        <td>:</td>
+                        <td>
+                            <select name="" id="" style="width: 390px;">
+                                <option value="HSBC">HSBC</option>
+                                <option value="HSBC">HSBC</option>
+                                <option value="BRI">BRI</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Account Holder</td>
+                        <td>:</td>
+                        <td><input type="text" value="Name Here" style="width: 380px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Transaction</td>
+                        <td>:</td>
+                        <td><input type="number" value="1" style="width: 25px;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td>
+                            <small>*if the transaction is for 4 person. Choose 3 from the drop-down list</small>
+                            <div style="color: green;">
+                                <input type="checkbox" checked> <label for="">Send to Mobile Phone</label><br>
+                                <input type="checkbox" checked> <label for="">Send to Email</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Send to Mobile Phone</td>
+                        <td>:</td>
+                        <td><input type="text" value="1234567890, 1234567891" style="width: 380px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Send to Email</td>
+                        <td>:</td>
+                        <td><input type="text" value="mfmm2.g13@soton.ac.uk, fys_06@yahoo.com" style="width: 380px;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td><br><input type="submit" value="Generate Nabr Link" style="background-color: green; color:white" ></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
