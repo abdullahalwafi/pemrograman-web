@@ -1,0 +1,80 @@
+
+body{
+    margin: 0px 200px;
+    border: 1px solid black;
+}
+div {
+    padding: 20px;
+    background-color: cornsilk;
+}
+#header {
+    background-color: #e29a67;
+    text-align: center;
+    color: #000099;
+    padding: 5px;
+}
+blockquote {
+    background-color: yellow;
+    border: 1px dotted black;
+    font-style: italic;
+    color: black;
+}
+#soekarno {
+    font-weight: bold;
+}
+#nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+#nav li {
+    margin-right: 10px;
+}
+.gambar {
+    display: flex;
+    justify-content: center;
+}
+.gambar img {
+    width: 250px;
+    margin-right: 10px;
+    border-radius: 5%;
+    box-shadow: 5px 5px rgba(134, 134, 199, 0.459);
+}
+.isi {
+    text-align: justify;
+}
+.first-key {
+    font-weight: bold;
+    font-size: 75px;
+    color: rgb(11, 11, 187);
+    line-height: 0px;
+}
+.jawa {
+    font-weight: bold;
+}
+#profil {
+    text-align: justify;
+}
+.koleksi {
+    display: flex;
+    justify-content: center;
+}
+.koleksi img {
+    width: 23%;
+    margin-right: 10px;
+    border: 2px dotted;
+    border-radius: 50%;
+}
+.promo {
+    text-align: center;
+}
+.promo ol {
+    display: inline-block;
+}
+.promo li {
+    text-align: left;
+}
+.promo a {
+    text-decoration: none;
+    color: black;
+}
