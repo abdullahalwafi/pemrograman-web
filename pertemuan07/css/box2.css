@@ -1,0 +1,31 @@
+.topbox {
+    width: 100%;
+    height: 100px;
+    background-color: #aedd94;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+.container {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.box:nth-child(1){
+    background-color: #F4EB49;
+    width: 250px;
+    margin-right: 20px;
+    border: 1px solid black;
+}
+.box:nth-child(2) {
+    width: 100%;
+    border: 1px solid black;
+}
+.bg-orange{
+    background-color: #FF6624;
+}
+.bg-blue {
+    background-color: #4DD7FA;
+}
+.box {
+    height: 150px;
+}
