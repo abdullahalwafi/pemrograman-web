@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    width: 4rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+    padding: 0.5rem;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
