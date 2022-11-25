@@ -1,0 +1,39 @@
+
+body {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+span {
+    padding: 2em;
+    font-size: 20px;
+    font-weight: bolder;
+}
+nav {
+    background-color: #FFC0CB;
+    min-height: 100vh;
+    width: 15vw;
+}
+header, footer {
+    flex-direction: row;
+    background-color: #F0E68C;
+    height: 18vh;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+.container .items {
+    display: flex;
+    flex-grow: 1;
+}
+article {
+    flex: 0 0 20vw;
+    flex-grow: 1;
+}
+aside {
+    background-color: #00FFFF;
+    flex: 0 0 20vw;
+}
+
