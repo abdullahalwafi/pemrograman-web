@@ -13,7 +13,7 @@ if (mediaQuery.matches) {
         $(window).scroll(function () {
             $(window).height()
             if ($(window).scrollTop() > 1) {
-                $("#navbar").css({ "background-color": "#ACD1FE" });
+                $("#navbar").css({ "background-color": "#fff" });
             }
             else {
                 $("#navbar").css({ "background-color": "transparent" });
@@ -22,3 +22,10 @@ if (mediaQuery.matches) {
         })
     })
 }
+$(document).ready(function(){
+    $(".owl-carousel").owlCarousel({
+        rtl:true,
+        nav:true,
+    }
+  );
+});

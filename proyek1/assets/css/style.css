@@ -15,7 +15,6 @@ body {
     font-size: 14px;
     font-weight: 400;
     line-height: 1.8;
-    height: 5000px;
 }
 a {
     text-decoration: none;
@@ -26,6 +25,69 @@ nav {
 }
 #banner {
     background-image: url('../images/bg.jpg');
+}
+
+.bg-main {
+    background-color: #5A83D5;
+}
+.bg-white {
+    background-color: white;
+}
+.buttom-img {
+    margin-top: -200px;
+}
+.item {
+    background-image: url(../images/bubble.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top center;
+    padding: 45px 15px 80px;
+    margin-right: 50px;
+}
+.price-list {
+    background-color: rgba(255, 255, 255, 0.822);
+    border: 2px solid white;
+    border-radius: 25px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 20px;
+    flex-wrap: 1;
+}
+.flex-center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.flex-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.flex-center img {
+    margin-bottom: 10px;
+}
+.flex-center table {
+    width: 100%;
+}
+.flex-center input, .flex-center textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 25px;
+}
+footer {
+    background: var(--main-color);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+.sosmed i {
+    font-size: 1.5rem;
+    margin-right: 20px;
 }
 @media screen and (min-width: 601px) {
     #banner {
@@ -67,9 +129,10 @@ nav {
         list-style: none;
     }
 
-    .container {
+    .header {
         max-width: 100%;
         margin: 0 auto;
+        z-index: 100;
     }
 
     nav {
@@ -78,7 +141,6 @@ nav {
         position: fixed;
         top: 0%;
         padding: 0 0.9em;
-        overflow: hidden;
         width: 100%;
     }
 
@@ -98,7 +160,7 @@ nav {
     }
     #title img {
         margin-right: 5px;
-        width: 25px;
+        width: 35px;
     }
 
     nav :where(li, a) {
@@ -119,6 +181,64 @@ nav {
 
     nav ul li a:hover {
         background-color: var(--main-color);
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        height: 650px;
+        padding: 110px 100px 0;
+        flex-wrap: 1;
+    }
+    .service {
+        display: flex;
+        flex-wrap: 1;
+        margin-top: 20px;
+    }
+    .service img {
+        margin-right: 20px;
+    }
+    .why {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+        color: white;
+        width: 30%;
+        border: 2px solid gainsboro;
+        border-radius: 2%;
+        padding: 20px;
+    }
+    .why h3 {
+        line-height: 1;
+    }
+    .videos iframe{
+        width: 550px;
+        height: 250px;
+        border: 3px solid rgba(102, 102, 102, 0.726);
+        margin-right: 20px;
+        border-radius: 25px;
+    }
+    .regis {
+        width: 50vw;
+    }
+    article {
+        background-color: rgba(255, 255, 255, 0.822);
+        border: 2px solid white;
+        border-radius: 25px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-right: 20px;
+        flex-wrap: 1;
+        width: 30vw;
+        margin-top: 20px;
+    }
+    section img {
+        width: 100%;
+        border-radius: 25px;
     }
 }
 @media screen and (max-width: 600px) {
@@ -161,7 +281,7 @@ nav {
         list-style: none;
     }
 
-    .container {
+    .header {
         max-width: 100%;
         margin: 0 auto;
     }
@@ -264,5 +384,58 @@ nav {
     }
     nav li.active a:hover{
         color: var(--lighter-color);
+    }
+    #price .flex-row {
+        flex-direction: column;
+        
+    }
+    .container-img img {
+        margin-top: 20px;
+        width: 100%;
+    }
+    #service {
+        padding: 40px 10px;
+    }
+    .service {
+        margin: 20px ;
+    }
+    #why .service {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .why {
+        text-align: center;
+        color: white;
+        width: 100%;
+        border: 2px solid gainsboro;
+        border-radius: 2%;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .why h3 {
+        line-height: 1;
+    }
+    footer{
+        margin-bottom: 85px;
+    }
+    #blog .flex-row {
+        flex-direction: column;
+    }
+    article {
+        background-color: rgba(255, 255, 255, 0.822);
+        border: 2px solid white;
+        border-radius: 25px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: 1;
+        width: 100%;
+        margin: 10px;
+    }
+    section img {
+        width: 100%;
+        border-radius: 25px;
     }
 }
