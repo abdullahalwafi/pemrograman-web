@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Cari Teman</title>
+</head>
+<body>
+    <form id="frm_cari">
+        <label for="nama">Cari siswa : </label>
+        <input type="text" id="nama">
+        <input type="button" value="Go" onclick="cariTeman()">
+    </form>
+
+    <hr>
+
+    <div style="padding: 15px; border: 25px solid green; width: 250px; margin: 20px;">
+        <p>Nama yang anda cari: <span id="katacari"></span></p>
+    </div>
+
+    <script>
+        function cariTeman() {
+            let nama = document.getElementById('nama').value;
+            let katacari = document.getElementById('katacari');
+            
+            katacari.innerHTML = nama;
+
+            if (nama.toLowerCase() == "ahmad") {
+                console.log('Ahmad Ketemu!');
+                katacari.style = "color: blue;"
+            } else {
+                console.log('ini bukan Ahmad!');
+                katacari.style = "color: red;"
+            }
+        }
+    </script>
+</body>
+</html>

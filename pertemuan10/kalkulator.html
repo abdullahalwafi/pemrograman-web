@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+</head>
+<body>
+    <h1>Kalkulator</h1>
+
+    <label for="bilangan1">Masukan Bilangan 1 : </label>
+    <input type="number" id="bilangan1"><br>
+
+    <label for="bilangan2">Masukan Bilangan 2 : </label>
+    <input type="number" id="bilangan2"><br>
+    <span>Pilih Operasi Aritmatika : </span>
+    <input type="radio" name="operator" value="tambah"> +
+    <input type="radio" name="operator" value="kurang"> -
+    <input type="radio" name="operator" value="bagi"> :
+    <input type="radio" name="operator" value="kali"> x
+    <br>
+    <input type="button" value="Hitung" onclick="Kalkulator()">
+    <br>
+    <p>Hasil : <span id="hasil">0</span></p>
+
+    <script>
+        function Kalkulator() {
+            let bilangan1 = parseInt(document.getElementById('bilangan1').value);
+            let bilangan2 = parseInt(document.getElementById('bilangan2').value);
+            let operator = document.querySelector('input[name="operator"]:checked').value;
+            let hasil = document.querySelector('#hasil')
+
+           switch (operator) {
+            case "tambah":
+                hasil.innerHTML = bilangan1 + bilangan2;
+                break;
+           
+            case "kurang":
+                hasil.innerHTML = bilangan1 - bilangan2;
+                break;
+           
+            case "bagi":
+                hasil.innerHTML = bilangan1 / bilangan2;
+                break;
+           
+            default:
+                hasil.innerHTML = bilangan1 * bilangan2;
+                break;
+           aaaaa}
+        }
+
+
+    </script>
+</body>
+</html>
