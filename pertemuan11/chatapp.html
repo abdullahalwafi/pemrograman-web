@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatt APP</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <fieldset>
+      <legend>ChattAPP</legend>
+      <div id="chat"></div>
+      <div id="formChat">
+        <input type="text" id="inputPesan" placeholder="Input Pesan" />
+        <input type="button" value="Kirim" id="kirim" onclick="kirimPesan()" />
+      </div>
+    </fieldset>
+
+    <script>
+      function kirimPesan() {
+        let inputPesan = document.getElementById("inputPesan");
+
+        if (!inputPesan.value) {
+          alert("input pesan wajib diisi!");
+        } else {
+          let pesanBaru = document.createElement("div");
+          pesanBaru.classList.add("pesanbaru");
+          pesanBaru.innerText = inputPesan.value;
+
+          let chat = document.getElementById("chat");
+          chat.appendChild(pesanBaru);
+          chat.scrollTop = chat.scrollHeight;
+
+          inputPesan.value = "";
+        }
+      }
+    </script>
+  </body>
+</html>

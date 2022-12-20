@@ -1,0 +1,45 @@
+fieldset {
+    margin: 30px 25vw;
+    border-radius: 25px;
+    padding: 20px;
+}
+#chat {
+    height: 50vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+#formChat {
+    display: flex;
+    height: fit-content;
+    justify-content: baseline;
+}
+input {
+    padding: 10px;
+    border-radius: 15px;
+}
+input[type="button"] {
+    width: 70px;
+}
+input[type="text"] {
+    margin-right: 5px;
+    flex-grow: 1;
+}
+.pesanbaru {
+    padding: 10px 30px 10px 20px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+.pesanbaru:nth-child(odd) {
+    background-color: rgb(150, 250, 172);
+    width: max-content;
+    align-self: start;
+}
+.pesanbaru:nth-child(even) {
+    background-color: rgb(140, 148, 142);
+    width: max-content;
+    align-self: flex-end;
+    margin-right: 15px;
+}
