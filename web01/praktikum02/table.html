@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan coloum rows span</title>
+    <style>
+        li{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>
+            <table border="1" cellpadding="5">
+                <tr>
+                    <th>7:00pm</th>
+                    <th>7:30pm</th>
+                    <th>8:00pm</th>
+                </tr>
+                <tr>
+                    <td colspan="3">The Sunday Night Movie</td>
+                </tr>
+                <tr>
+                    <td>Perry Mason</td>
+                    <td>Candid Camera</td>
+                    <td>What's My Line</td>
+                </tr>
+                <tr>
+                    <td>Bonanza</td>
+                    <td colspan="2">The Wackiest Ship in the Army</td>
+                </tr>
+            </table>
+        </li>
+        <li>
+            <table border="1" cellpadding="5">
+                <tr>
+                    <td>appless</td>
+                    <td rowspan="3">oranges</td>
+                    <td>pears</td>
+                </tr>
+                <tr>
+                    <td>bananas</td>
+                    <td rowspan="2">pineapple</td>
+                </tr>
+                <tr>
+                    <td>lychess</td>
+                </tr>
+            </table>
+        </li>
+        <li style="border: 1 solid black;">
+            <caption>Your Content Here </caption>
+            <table border="1" cellpadding="5">
+                <tr>
+                    <th rowspan="2"></th>
+                    <th colspan="2">A Common header for two subheads</th>
+                    <th rowspan="2">Header 3</th>
+                </tr>
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                </tr>
+                <tr>
+                    <th>Thing A</th>
+                    <td>Data A1</td>
+                    <td>Data A2</td>
+                    <td>Data A3</td>
+                </tr>
+                <tr>
+                    <th>Thing B</th>
+                    <td>Data B1</td>
+                    <td>Data B2</td>
+                    <td>Data B3</td>
+                </tr>
+                <tr>
+                    <th>Thing C</th>
+                    <td>Data C1</td>
+                    <td>Data C2</td>
+                    <td>Data C3</td>
+                </tr>
+            </table>
+        </li>
+    </ol>
+</body>
+</html>
