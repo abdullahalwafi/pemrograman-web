@@ -99,6 +99,9 @@
                         <th>Jenis Kelamin</th>
                         <th>Program Studi</th>
                         <th>Domisili</th>
+                        <th>Skill</th>
+                        <th>Skor</th>
+                        <th>Kriteria</th>
                     </tr>
                     <?php
                     if (isset($_POST['submit'])) {
@@ -116,10 +119,43 @@
                             <td><?= $jenis_kelamin ?></td>
                             <td><?= $program_studi ?></td>
                             <td><?= $domisili ?></td>
+                            <td>
+                                <?php
+                                $skor = 0;
+                                if (isset($_POST['skill'])) {
+                                    foreach ($_POST['skill'] as $skill) {
+                                        foreach ($skills as $key => $value) {
+                                            if ($skill == $key) {
+                                                $skor  += $value;
+                                            }
+                                        }
+                                        echo $skill . ", ";
+                                    }
+                                }
+                                ?>
+                            </td>
+                            <td><?= $skor ?></td>
+                            <td>
+                                <?php
+                                if ($skor == 0) {
+                                    echo "Tidak Memadai";
+                                } elseif ($skor > 0 && $skor <= 40) {
+                                    echo "Kurang";
+                                } elseif ($skor > 40 && $skor <= 60) {
+                                    echo "Cukup";
+                                } elseif ($skor > 60 && $skor <= 100) {
+                                    echo "baik";
+                                } elseif ($skor > 100 && $skor <= 150) {
+                                    echo "Sangat Baik";
+                                } else {
+                                    echo "errror";
+                                }
+                                ?>
+                            </td>
                         </tr>
                     <?php } else { ?>
                         <tr class="text-center">
-                            <td colspan="6">Data Tidak Ada</td>
+                            <td colspan="9">Data Tidak Ada</td>
                         </tr>
                     <?php } ?>
                 </table>
