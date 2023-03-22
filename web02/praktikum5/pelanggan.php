@@ -1,9 +1,8 @@
 <?php
 require_once('koneksi.php');
-$sql = 'SELECT * FROM pelanggan';
+$sql = 'SELECT *, kartu.nama AS kartu, pelanggan.nama AS nama FROM pelanggan INNER JOIN kartu ON kartu.id = pelanggan.kartu_id';
 $rs = $dns->query($sql);
-?>
-<?php
+
 include_once('layouts/header.php');
 include_once('layouts/menu.php');
 ?>
@@ -13,8 +12,8 @@ include_once('layouts/menu.php');
     if (isset($_GET['id'])) {
         if (isset($_POST['proses'])) {
             $sql = 'UPDATE pelanggan SET kode="' . $_POST['kode'] . '", nama="' . $_POST['nama'] . '", jk="' . $_POST['jk'] . '", tmp_lahir="' . $_POST['tmp_lahir'] . '", tgl_lahir="' . $_POST['tgl_lahir'] . '", email="' . $_POST['email'] . '", kartu_id="' . $_POST['kartu_id'] . '" WHERE id=' . $_GET['id'];
-            $rs = $dns->query($sql);
-            if ($rs) {
+            $update = $dns->query($sql);
+            if ($update) {
                 echo '<div class="alert alert-success" role="alert">Data berhasil diubah</div>';
                 echo "<meta http-equiv='refresh' content='1;url=pelanggan.php'>";
             } else {
@@ -144,8 +143,8 @@ include_once('layouts/menu.php');
     } elseif (isset($_GET['add'])) {
         if (isset($_POST['proses'])) {
             $sql = "INSERT INTO pelanggan (kode, nama, jk, tmp_lahir, tgl_lahir, email, kartu_id) VALUES ('" . $_POST['kode'] . "', '" . $_POST['nama'] . "', '" . $_POST['jk'] . "', '" . $_POST['tmp_lahir'] . "', '" . $_POST['tgl_lahir'] . "', '" . $_POST['email'] . "', '" . $_POST['kartu_id'] . "')";
-            $rs = $dns->query($sql);
-            if ($rs) {
+            $tambah = $dns->query($sql);
+            if ($tambah) {
                 echo '<div class="alert alert-success" role="alert">Data berhasil ditambahkan</div>';
                 echo '<meta http-equiv="refresh" content="1; url=pelanggan.php">';
             } else {
@@ -255,12 +254,10 @@ include_once('layouts/menu.php');
             </div>
         </form>
     <?php } elseif (isset($_GET['id_hapus'])) {
-
-        $_iddel = $_GET['id_hapus'];
-        $sql = "DELETE FROM pelanggan WHERE id=?";
-        $st = $dns->prepare($sql);
-        $st->execute([$_iddel]);
-        if ($rs) {
+        $id = $_GET['id_hapus'];
+        $sql = "DELETE FROM pelanggan WHERE id=$id";
+        $delete = $dns->query($sql);
+        if ($delete) {
             echo '<div class="alert alert-success" role="alert">Data berhasil dihapus</div>';
             echo '<meta http-equiv="refresh" content="1; url=pelanggan.php">';
         } else {
@@ -292,7 +289,7 @@ include_once('layouts/menu.php');
                 echo '<td>' . $row['jk'] . '</td>';
                 echo '<td>' . $row['tmp_lahir'] . '</td>';
                 echo '<td>' . $row['email'] . '</td>';
-                echo '<td>' . $row['kartu_id'] . '</td>';
+                echo '<td>' . $row['kartu'] . '</td>';
                 echo '<td><a href="?id=' . $row['id'] . '">Edit</a> | <a  href="?id_hapus=' . $row['id'] . '">Hapus</a></td>';
                 echo '</tr>';
             }
