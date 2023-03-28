@@ -20,7 +20,7 @@ if (isset($_POST['login'])) {
 
         header('location:home.php');
     } else {
-        header('location:login.php?status=gagal');
+        header('location:index.php?status=gagal');
     }
 }
 ?>
