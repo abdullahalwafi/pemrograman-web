@@ -43,6 +43,5 @@ Route::post('/hasil-regist', [RegistrasiAnggotaController::class, 'hasil']);
 Route::get('/form-peminjaman-buku', [PeminjamanBukuController::class, 'index']);
 Route::post('/hasil-peminjaman', [PeminjamanBukuController::class, 'hasil']);
 
-// praktikum 10
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/dashboard/buku', [BukuController::class, 'index']);
