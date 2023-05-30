@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BukuController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\MembersController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PeminjamanBukuController;
 use App\Http\Controllers\RegistrasiAnggotaController;
@@ -43,5 +44,10 @@ Route::post('/hasil-regist', [RegistrasiAnggotaController::class, 'hasil']);
 Route::get('/form-peminjaman-buku', [PeminjamanBukuController::class, 'index']);
 Route::post('/hasil-peminjaman', [PeminjamanBukuController::class, 'hasil']);
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
-Route::get('/dashboard/buku', [BukuController::class, 'index']);
+Route::prefix('/dashboard')->group(function () {
+    Route::get('/', [DashboardController::class, 'index']);
+    Route::get('/book', [BookController::class, 'index']);
+    Route::get('/member', [MembersController::class, 'index']);
+});
+
+
