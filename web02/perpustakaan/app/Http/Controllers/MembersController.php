@@ -21,7 +21,7 @@ class MembersController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.member.create');
     }
 
     /**
@@ -29,7 +29,15 @@ class MembersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'gender' => 'required|in:Pria,Wanita',
+            'status' => 'required',
+            'address' => 'required',
+        ]);
+        Members::create($validated);
+        return redirect('/dashboard/member');
     }
 
     /**
@@ -59,8 +67,9 @@ class MembersController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Members $members)
+    public function destroy(string $id)
     {
-        //
+        Members::destroy($id);
+        return redirect('/dashboard/member');
     }
 }

@@ -21,7 +21,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.book.create');
     }
 
     /**
@@ -29,7 +29,15 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate
+        $validated = $request->validate([
+            'title' => 'required|min:5|max:20',
+            'isbn' => 'required|int',
+            'stok' => 'required|int',
+        ]);
+
+        Book::create($validated);
+        return redirect('/dashboard/book');
     }
 
     /**
@@ -61,6 +69,7 @@ class BookController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Book::destroy($id);
+        return redirect('/dashboard/book');
     }
 }

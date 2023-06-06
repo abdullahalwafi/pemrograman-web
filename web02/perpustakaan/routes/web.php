@@ -46,8 +46,17 @@ Route::post('/hasil-peminjaman', [PeminjamanBukuController::class, 'hasil']);
 
 Route::prefix('/dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index']);
-    Route::get('/book', [BookController::class, 'index']);
-    Route::get('/member', [MembersController::class, 'index']);
+
+    Route::prefix('/member')->group(function () {
+        Route::get('/', [MembersController::class, 'index']);
+        Route::get('/create', [MembersController::class, 'create']);
+        Route::post('/store', [MembersController::class, 'store']);
+        Route::delete('/destroy/{id}', [MembersController::class, 'destroy']);
+    });
+    Route::prefix('/book')->group(function () {
+        Route::get('/', [BookController::class, 'index']);
+        Route::get('/create', [BookController::class, 'create']);
+        Route::post('/store', [BookController::class, 'store']);
+        Route::delete('/destroy/{id}', [BookController::class, 'destroy']);
+    });
 });
-
-

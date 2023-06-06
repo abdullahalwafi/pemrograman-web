@@ -1,4 +1,7 @@
 @extends('admin.layouts.index')
+@section('title')
+    Dashboard
+@endsection
 @section('content')
     <!-- partial -->
     <div class="content-wrapper">

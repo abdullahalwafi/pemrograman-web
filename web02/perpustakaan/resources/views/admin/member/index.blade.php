@@ -1,4 +1,7 @@
 @extends('admin.layouts.index')
+@section('title')
+    Members
+@endsection
 @section('content')
     <!-- partial -->
     <div class="content-wrapper">
@@ -6,7 +9,7 @@
             <h3 class="page-title">
                 <span class="page-title-icon bg-gradient-primary text-white me-2">
                     <i class="mdi mdi-home"></i>
-                </span> Member
+                </span> Members
             </h3>
             <nav aria-label="breadcrumb">
                 <ul class="breadcrumb">
@@ -18,7 +21,7 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <a href="" class="btn btn-gradient-primary mb-3">+ Tambah Data</a>
+                <a href="{{ url('/dashboard/member/create') }}" class="btn btn-gradient-primary mb-3">+ Tambah Data</a>
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Data Table</h4>
@@ -46,7 +49,14 @@
                                         <td>
                                             <button class="btn btn-info btn-sm">View</button>
                                             <button class="btn btn-warning btn-sm">Edit</button>
-                                            <button class="btn btn-danger btn-sm">Delete</button>
+                                            <form action="{{ url('/dashboard/member/destroy', $member->id) }}"
+                                                class="d-inline" method="POST">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit"
+                                                    onclick="if(!confirm('Anda yakin akan menghapus anggota {{ $member->name }} ?')) {return false};"
+                                                    class="btn btn-danger btn-sm">Delete</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

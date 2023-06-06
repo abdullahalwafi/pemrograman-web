@@ -1,4 +1,7 @@
 @extends('admin.layouts.index')
+@section('title')
+    Books
+@endsection
 @section('content')
     <!-- partial -->
     <div class="content-wrapper">
@@ -6,7 +9,7 @@
             <h3 class="page-title">
                 <span class="page-title-icon bg-gradient-primary text-white me-2">
                     <i class="mdi mdi-home"></i>
-                </span> Dashboard
+                </span> Books
             </h3>
             <nav aria-label="breadcrumb">
                 <ul class="breadcrumb">
@@ -18,7 +21,7 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <a href="" class="btn btn-gradient-primary mb-3">+ Tambah Data</a>
+                <a href="{{ url('/dashboard/book/create') }}" class="btn btn-gradient-primary mb-3">+ Tambah Data</a>
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Data Table</h4>
@@ -38,9 +41,13 @@
                                         <td>{{ $book->title }}</td>
                                         <td>{{ $book->stok }}</td>
                                         <td>
-                                            <button class="btn btn-info btn-sm">View</button>
-                                            <button class="btn btn-warning btn-sm">Edit</button>
-                                            <button class="btn btn-danger btn-sm">Delete</button>
+                                            <a href="{{ url('') }}" class="btn btn-info btn-sm">View</a>
+                                            <a href="{{ url('') }}" class="btn btn-warning btn-sm">Edit</a>
+                                            <form class="d-inline" action="{{ url('/dashboard/book/destroy', $book) }}" method="POST">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit" class="btn btn-danger btn-sm" onclick="if(!confirm('Anda yakin akan menghapus anggota {{ $book->name }} ?')) {return false};">Delete</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
