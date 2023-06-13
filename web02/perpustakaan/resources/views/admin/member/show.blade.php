@@ -21,7 +21,7 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <a href="{{ url('/dashboard/member/create') }}" class="btn btn-gradient-primary mb-3">+ Tambah Data</a>
+                <a href="{{ url('/dashboard/member') }}" class="btn btn-gradient-primary mb-3">Back</a>
                 <div class="card">
                     <div class="card-body">
                         @if (session('success') > 0)
@@ -34,40 +34,23 @@
                         <table class="table table-hover">
                             <thead class="table-success table-bordered">
                                 <tr>
-                                    <th>No</th>
+                                    <th>ID</th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Gender</th>
                                     <th>Status</th>
                                     <th>Address</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($members as $member)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $member->name }}</td>
-                                        <td>{{ $member->email }}</td>
-                                        <td>{{ $member->gender }}</td>
-                                        <td>{{ $member->status }}</td>
-                                        <td>{{ $member->address }}</td>
-                                        <td>
-                                            <a class="btn btn-info btn-sm"
-                                                href="{{ url('/dashboard/member/show', $member->id) }}">View</a>
-                                            <a class="btn btn-warning btn-sm"
-                                                href="{{ url('/dashboard/member/edit', $member->id) }}">Edit</a>
-                                            <form action="{{ url('/dashboard/member/destroy', $member->id) }}"
-                                                class="d-inline" method="POST">
-                                                @csrf
-                                                @method('delete')
-                                                <button type="submit"
-                                                    onclick="if(!confirm('Anda yakin akan menghapus anggota {{ $member->name }} ?')) {return false};"
-                                                    class="btn btn-danger btn-sm">Delete</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                <tr>
+                                    <td>{{ $member->id }}</td>
+                                    <td>{{ $member->name }}</td>
+                                    <td>{{ $member->email }}</td>
+                                    <td>{{ $member->gender }}</td>
+                                    <td>{{ $member->status }}</td>
+                                    <td>{{ $member->address }}</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

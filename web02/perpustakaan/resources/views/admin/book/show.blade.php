@@ -1,6 +1,6 @@
 @extends('admin.layouts.index')
 @section('title')
-    Books
+    Show Book
 @endsection
 @section('content')
     <!-- partial -->
@@ -21,7 +21,7 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <a href="{{ url('/dashboard/book/create') }}" class="btn btn-gradient-primary mb-3">+ Tambah Data</a>
+                <a href="{{ url('/dashboard/book') }}" class="btn btn-gradient-primary mb-3">Back</a>
                 <div class="card">
                     <div class="card-body">
                         @if (session('success') > 0)
@@ -34,32 +34,19 @@
                         <table class="table table-hover">
                             <thead class="table-success table-bordered">
                                 <tr>
-                                    <th>No</th>
+                                    <th>ID</th>
                                     <th>Judul</th>
                                     <th>Stok</th>
-                                    <th>Action</th>
+                                    <th>ISBN</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($books as $book)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $book->title }}</td>
-                                        <td>{{ $book->stok }}</td>
-                                        <td>
-                                            <a href="{{ url('/dashboard/book/show', $book->id) }}" class="btn btn-info btn-sm">View</a>
-                                            <a href="{{ url('/dashboard/book/edit', $book->id) }}"
-                                                class="btn btn-warning btn-sm">Edit</a>
-                                            <form class="d-inline" action="{{ url('/dashboard/book/destroy', $book) }}"
-                                                method="POST">
-                                                @csrf
-                                                @method('delete')
-                                                <button type="submit" class="btn btn-danger btn-sm"
-                                                    onclick="if(!confirm('Anda yakin akan menghapus anggota {{ $book->name }} ?')) {return false};">Delete</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                <tr>
+                                    <td>{{ $book->id }}</td>
+                                    <td>{{ $book->title }}</td>
+                                    <td>{{ $book->stok }}</td>
+                                    <td>{{ $book->isbn }}</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

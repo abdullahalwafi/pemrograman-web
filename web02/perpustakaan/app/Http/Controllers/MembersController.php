@@ -43,25 +43,37 @@ class MembersController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Members $members)
+    public function show(string $id)
     {
-        //
+        $member = Members::find($id);
+        return view('admin.member.show', ['member' => $member]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Members $members)
+    public function edit(string $id)
     {
-        //
+        $member = Members::find($id);
+        return view('admin.member.edit', ['member' => $member]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Members $members)
+    public function update(Request $request, string $id)
     {
-        //
+        $member = Members::find($id);
+        // validate
+        $validated = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'gender' => 'required|in:Pria,Wanita',
+            'status' => 'required',
+            'address' => 'required',
+        ]);
+        $member->update($validated);
+        return redirect('/dashboard/member')->with('success', 'Data berhasil diubah');
     }
 
     /**

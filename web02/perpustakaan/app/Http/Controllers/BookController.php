@@ -45,7 +45,8 @@ class BookController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $book = Book::find($id);
+        return view('admin.book.show', ['book' => $book]);
     }
 
     /**
@@ -53,7 +54,8 @@ class BookController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $book = Book::find($id);
+        return view('admin.book.edit', ['book' => $book]);
     }
 
     /**
@@ -61,7 +63,15 @@ class BookController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $book = Book::find($id);
+        // validate
+        $validated = $request->validate([
+            'title' => 'required|min:5|max:20',
+            'isbn' => 'required|int',
+            'stok' => 'required|int',
+        ]);
+        $book->update($validated);
+        return redirect('/dashboard/book')->with('success', 'Data berhasil diubah');
     }
 
     /**

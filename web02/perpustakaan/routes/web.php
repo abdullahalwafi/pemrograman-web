@@ -52,11 +52,17 @@ Route::prefix('/dashboard')->group(function () {
         Route::get('/create', [MembersController::class, 'create']);
         Route::post('/store', [MembersController::class, 'store']);
         Route::delete('/destroy/{id}', [MembersController::class, 'destroy']);
+        Route::get('/edit/{id}', [MembersController::class, 'edit']);
+        Route::put('/update/{id}', [MembersController::class, 'update']);
+        Route::get('/show/{id}', [MembersController::class, 'show']);
     });
     Route::prefix('/book')->group(function () {
         Route::get('/', [BookController::class, 'index']);
         Route::get('/create', [BookController::class, 'create']);
         Route::post('/store', [BookController::class, 'store']);
         Route::delete('/destroy/{id}', [BookController::class, 'destroy']);
+        Route::get('/edit/{id}', [BookController::class, 'edit']);
+        Route::put('/update/{id}', [BookController::class, 'update']);
+        Route::get('/show/{id}', [BookController::class, 'show']);
     });
 });
