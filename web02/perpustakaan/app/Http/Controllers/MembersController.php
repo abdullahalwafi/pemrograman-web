@@ -37,7 +37,7 @@ class MembersController extends Controller
             'address' => 'required',
         ]);
         Members::create($validated);
-        return redirect('/dashboard/member');
+        return redirect('/dashboard/member')->with('success', 'Data berhasil ditambah');
     }
 
     /**
@@ -82,6 +82,6 @@ class MembersController extends Controller
     public function destroy(string $id)
     {
         Members::destroy($id);
-        return redirect('/dashboard/member');
+        return redirect('/dashboard/member')->with('success', 'Data berhasil diubah');
     }
 }

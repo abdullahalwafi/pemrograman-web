@@ -37,7 +37,7 @@ class BookController extends Controller
         ]);
 
         Book::create($validated);
-        return redirect('/dashboard/book');
+        return redirect('/dashboard/book')->with('success', 'Data berhasil ditambah');
     }
 
     /**
@@ -80,6 +80,6 @@ class BookController extends Controller
     public function destroy(string $id)
     {
         Book::destroy($id);
-        return redirect('/dashboard/book');
+        return redirect('/dashboard/book')->with('success', 'Data berhasil dihapus');
     }
 }
